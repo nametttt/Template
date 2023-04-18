@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Template_4337"
         mc:Ignorable="d"
         Title="Yakovleva" Height="450" Width="800">
-    <Grid >
-        <TextBlock Text="Яковлева Татьяна Сергеевна 4337, 18 y.o." FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Grid>
+    <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Яковлева Татьяна Сергеевна 4337, 18 y.o." FontSize="24"/>
+        <Button Content="Импорт данных" Margin="0 30 0 0" FontSize="24" Click="Button_Click"/>
+        <Button Content="Экспорт данных" Margin="0 30 0 0" FontSize="24" Click="Button_Click_1"/>
+        
+        <DockPanel>
+        <Viewbox Height="40">
+            <RadioButton Content="По стоимости" Margin="0 10 0 0" IsChecked="True" GroupName="tan" Name="rd1"/>
+        </Viewbox>
+        <Viewbox Height="40" HorizontalAlignment="Right">
+                <RadioButton Content="По услугам" Margin="0 10 0 0"  x:Name="rd2" GroupName="tan"/>
+        </Viewbox>
+        </DockPanel>
+    </StackPanel>
 </Window>
