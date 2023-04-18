@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Template_4337"
         mc:Ignorable="d"
         Title="Yakovleva" Height="450" Width="800">
-    <Grid>
-        
+    <Grid >
+        <TextBlock Text="Яковлева Татьяна Сергеевна 4337, 18 y.o." FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
