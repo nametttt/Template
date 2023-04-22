@@ -11,10 +11,21 @@
           </Key>
           <Property Name="ID" Type="float" Nullable="false" />
           <Property Name="Наименование услуги" Type="nvarchar" MaxLength="255" />
-          <Property Name="Стоимость, руб#  за час " Type="float" />
+          <Property Name="Стоимость" Type="float" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="IdServices" />
+          </Key>
+          <Property Name="IdServices" Type="int" Nullable="false" />
+          <Property Name="NameServices" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TypeOfService" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeService" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище t1ModelContainer">
           <EntitySet Name="myTable" EntityType="Self.myTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -27,10 +38,21 @@
           </Key>
           <Property Name="ID" Type="Double" Nullable="false" />
           <Property Name="Наименование_услуги" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Стоимость__руб___за_час_" Type="Double" />
+          <Property Name="Стоимость" Type="Double" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IdServices" />
+          </Key>
+          <Property Name="IdServices" Type="Int32" Nullable="false" />
+          <Property Name="NameServices" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TypeOfService" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeService" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="t1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="myTables" EntityType="Self.myTable" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -43,7 +65,18 @@
               <MappingFragment StoreEntitySet="myTable">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Наименование_услуги" ColumnName="Наименование услуги" />
-                <ScalarProperty Name="Стоимость__руб___за_час_" ColumnName="Стоимость, руб#  за час " />
+                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="t1Model.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="IdServices" ColumnName="IdServices" />
+                <ScalarProperty Name="NameServices" ColumnName="NameServices" />
+                <ScalarProperty Name="TypeOfService" ColumnName="TypeOfService" />
+                <ScalarProperty Name="CodeService" ColumnName="CodeService" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

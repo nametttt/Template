@@ -16,18 +16,20 @@ namespace Template_4337
     {
         public double ID { get; set; }
         public string Наименование_услуги { get; set; }
-        public Nullable<double> Стоимость__руб___за_час_ { get; set; }
+        public Nullable<double> Стоимость { get; set; }
 
         public myTable()
         {
 
         }
 
-        public myTable(double iD, string наименование_услуги, double? стоимость__руб___за_час_)
+        public myTable(double iD, string наименование_услуги, double? sтоимость)
         {
             ID = iD;
             Наименование_услуги = наименование_услуги;
-            Стоимость__руб___за_час_ = стоимость__руб___за_час_;
+            Стоимость = sтоимость;
         }
     }
+
+
 }
